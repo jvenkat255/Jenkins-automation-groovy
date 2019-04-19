@@ -16,21 +16,21 @@ def allowsSignup = false
 def hudsonRealm = new HudsonPrivateSecurityRealm(allowsSignup)
 
 def adminUser = hudsonRealm.createAccount("admin", "test")
-def customerUser = hudsonRealm.createAccount("thiago", "test")
+def customerUser = hudsonRealm.createAccount("venkat", "test")
 jenkins.setSecurityRealm(hudsonRealm)
 
 def strategy = new GlobalMatrixAuthorizationStrategy()
 strategy.add(Jenkins.ADMINISTER, "admin")
 
-strategy.add(Jenkins.READ, "thiago")
-strategy.add(hudson.model.View.READ, "thiago")
+strategy.add(Jenkins.READ, "venkat")
+strategy.add(hudson.model.View.READ, "venkat")
 
-strategy.add(hudson.model.Item.BUILD, "thiago")
-strategy.add(hudson.model.Item.READ, "thiago")
-strategy.add(hudson.model.Item.WIPEOUT, "thiago")
-strategy.add(hudson.model.Item.WORKSPACE, "thiago")
+strategy.add(hudson.model.Item.BUILD, "venkat")
+strategy.add(hudson.model.Item.READ, "venkat")
+strategy.add(hudson.model.Item.WIPEOUT, "venkat")
+strategy.add(hudson.model.Item.WORKSPACE, "venkat")
 
-strategy.add(hudson.model.Run.UPDATE, "thiago")
+strategy.add(hudson.model.Run.UPDATE, "venkat")
 
 jenkins.setAuthorizationStrategy(strategy)
 
