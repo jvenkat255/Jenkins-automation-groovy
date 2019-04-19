@@ -18,7 +18,7 @@ jenkins.save()
 
 def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
 
-jenkinsLocationConfiguration.setAdminAddress("tmoreira2020@gmail.com")
+jenkinsLocationConfiguration.setAdminAddress("venkat1234@gmail.com")
 
 jenkinsLocationConfiguration.setUrl("http://localhost:8080")
 
